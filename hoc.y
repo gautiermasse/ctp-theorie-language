@@ -59,12 +59,13 @@ extern int myError;
 //	US : liste de ... (commande, assignation, expression)
 liste :	/* VIDE */
 	| liste error RC    { yyerrok; yyclearin; code (STOP); return 1;}
-	| liste RC 			{ code (STOP); MYERROR; return 2;}
-	| liste expr  RC	{ code((instr_t)printExprCode); code (STOP); MYERROR; return 3;}
-	| liste assgn RC    { code((instr_t)printExprCode); code (STOP); MYERROR; return 4; }
-	| liste cmd	  RC 	{ code (STOP); MYERROR; return 5;}
+	| liste RC 			{ code (STOP); return 2;}
+	| liste stmtList RC	{ code((instr_t)printExprCode); code (STOP); return 3;}
+	| liste stmtList RC	{ printf("Hello"); }
+/*	| liste expr  RC	{ code((instr_t)printExprCode); code (STOP); return 3;}
+	| liste assgn RC    { code((instr_t)printExprCode); code (STOP); return 4; }*/
+	| liste cmd	  RC 	{ code (STOP); return 5;}
 	;
-
 stmt :
 	  expr
 	| assgn
@@ -98,9 +99,12 @@ expr :	ENTIER 			{ code2((instr_t)intPush, (instr_t)$1);  }
 	| FVAR   			{ code3((instr_t)varPush, (instr_t)$1, (instr_t)varEval);}
 	| UNDEF
 	| PO expr PF  		{ $$=$2; }
+	| AO expr AF  		{ $$=$2; }
 	| expr opAlg expr 	{ code ((instr_t)*($2->U.pFct)); }
 	| SUB expr 			{ code((instr_t)negate); } %prec UNARY_MINUS
 	| PREDEF PO expr PF { code2((instr_t)predef, (instr_t)$1); }
+	| PREDEF AO expr AF { code2((instr_t)predef, (instr_t)$1); }
+
 	;
 	// A faire pour après : 
 	//| NOT expr { code ((instr_t)notCode); }
