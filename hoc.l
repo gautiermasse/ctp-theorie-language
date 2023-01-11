@@ -12,10 +12,12 @@
 entier		[0-9]+
 reel		([0-9]+\.?)|([0-9]*\.[0-9]+)
 ident		[a-zA-Z][a-zA-Z_0-9]*
-operateur	[-+*/#()?<>]|"??"|"=="|"!="
-carExclu	[^\-+*>/()?<@=a-zA-Z_0-9\n \t]
+operateur	[-+*/#(){}?<>]|"??"|"=="|"!="
+carExclu	[^;\-+*>/(){}?<@=a-zA-Z_0-9\n \t]
 
 %%
+"debug"		return DBG;
+";"			return ENDSEQ;
 {entier}    { yylval.symb = installIntSymbol("",DAT,atoi(yytext),"*(int *)");
 			return (yylval.symb)->type; };
 {reel}      { yylval.symb = installFloSymbol("",DAT,atof(yytext),"*(double *)");
