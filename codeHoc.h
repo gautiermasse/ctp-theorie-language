@@ -125,4 +125,12 @@ void ltCode(void);
 void gtCode(void);
 
 
+/******************************************************************************/
+/**
+ *  \fn         void eqCode(void);
+ *  \brief      Dépiler le symbole se trouvant au sommet de la pile d'exécution
+ *              et empiler sa valeur
+ */
+void eqCode(void);
+
 #endif /* _CODE_HOC_H_ */

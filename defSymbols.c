@@ -56,8 +56,7 @@ static struct { char *opName; short  opType; void (*opPtrFunc)(); char* opDesc; 
 	")",    PF,     0,		    ")",
 	"<",    LT,     ltCode,		"<",
 	">",    GT,     gtCode,		">",
-
-	//"==",   EQ,     eq,		    "egal",
+	"==",   EQ,     eqCode,		"egal",
 	//"!=",   NEQ,    neq,		"notegal",
 
 //	Opérateurs non algébriques
