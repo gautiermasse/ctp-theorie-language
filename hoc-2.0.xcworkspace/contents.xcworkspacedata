@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:hoc.h">
+   </FileRef>
+   <FileRef
+      location = "group:hoc.l">
+   </FileRef>
+   <FileRef
+      location = "group:hoc.y">
+   </FileRef>
+   <FileRef
+      location = "group:codeHoc.c">
+   </FileRef>
+   <FileRef
+      location = "group:codeHoc.h">
+   </FileRef>
+   <FileRef
+      location = "group:code.c">
+   </FileRef>
+   <FileRef
+      location = "group:code.h">
+   </FileRef>
+   <FileRef
+      location = "group:symbol.h">
+   </FileRef>
+   <FileRef
+      location = "group:symbol.c">
+   </FileRef>
+   <FileRef
+      location = "group:defSymbols.c">
+   </FileRef>
+   <FileRef
+      location = "group:color.h">
+   </FileRef>
+   <FileRef
+      location = "group:color.c">
+   </FileRef>
+   <FileRef
+      location = "group:msgFmt.c">
+   </FileRef>
+   <FileRef
+      location = "group:io.h">
+   </FileRef>
+   <FileRef
+      location = "group:io.c">
+   </FileRef>
+   <FileRef
+      location = "group:Makefile">
+   </FileRef>
+</Workspace>
