@@ -37,12 +37,8 @@ extern int myError;
 %type		<reel> expr assgn
 %type		<symb> opAlg var
 
-//%token <symb> AND OR NOT
-//%token <symb> EQ NE GT LT GE LE
-//%token LT 
-
 // Typage des tokens d'opérations arithmétiques
-%token 	<symb> ADD SUB MUL DIV POW LT
+%token 	<symb> ADD SUB MUL DIV POW LT GT
 %token 	<symb> PO PF
 %token	<symb> PR_TS PR_TS2
 %token RC
@@ -75,7 +71,7 @@ assgn :
   var AFF expr		{ code3((instr_t)varPush, (instr_t)$1, (instr_t)varAssign); }
 	;
 // US : Expression algébrique
-opAlg : ADD | SUB | MUL | DIV | POW | LT ;
+opAlg : ADD | SUB | MUL | DIV | POW | GT | LT ;
 //opAlg : ADD | SUB | MUL | DIV | POW | AND | OR | NOT | EQ | NE | GT | LT ;
 
 expr : ENTIER { code2((instr_t)intPush, (instr_t)$1); }
@@ -83,6 +79,8 @@ expr : ENTIER { code2((instr_t)intPush, (instr_t)$1); }
 	| var { code3((instr_t)varPush, (instr_t)$1, (instr_t)varEval); }
 	| PO expr PF { $$=$2; }
 	| expr opAlg expr { code ((instr_t)*($2->U.pFct)); }
+	
+	// A faire pour après : 
 	//| NOT expr { code ((instr_t)notCode); }
 	//| expr AND expr { code ((instr_t)andCode); }
 	//| expr OR expr { code ((instr_t)orCode); }

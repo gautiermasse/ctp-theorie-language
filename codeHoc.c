@@ -156,7 +156,7 @@ void power(void) {
  *	\part	O P E R A T I O N S   C O M P A R A I S O N 
  */
 /**
- *  \fn         void lt(void);
+ *  \fn         void ltCode(void);
  *  \brief      Dépiler les deux nombres se trouvant au sommet de la pile
  *              d'exécution, effectuer une addition et empiler le résultat
  */
@@ -165,6 +165,21 @@ void ltCode(void) {
 	d1.value = d1.value < d2.value;
 	push(d1);
 }
+
+/**
+ *	\part	O P E R A T I O N S   C O M P A R A I S O N 
+ */
+/**
+ *  \fn         void gtCode(void);
+ *  \brief      Dépiler les deux nombres se trouvant au sommet de la pile
+ *              d'exécution, effectuer une addition et empiler le résultat
+ */
+void gtCode(void) {
+	data_t d2 = pop(), d1 = pop();
+	d1.value = d1.value > d2.value;
+	push(d1);
+}
+
 
 
 /******************************************************************************/

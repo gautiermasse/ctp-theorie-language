@@ -12,8 +12,8 @@
 entier		[0-9]+
 reel		([0-9]+\.?)|([0-9]*\.[0-9]+)
 ident		[a-zA-Z][a-zA-Z_0-9]*
-operateur	[-+*/#()?<]|"??"
-carExclu	[^\-+*/()?<@=a-zA-Z_0-9\n \t]
+operateur	[-+*/#()?<>]|"??"
+carExclu	[^\-+*>/()?<@=a-zA-Z_0-9\n \t]
 
 %%
 {entier}    { yylval.symb = installIntSymbol("",DAT,atoi(yytext),"*(int *)");

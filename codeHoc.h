@@ -115,4 +115,14 @@ void printExprCode(void);
  */
 void ltCode(void);
 
+
+/******************************************************************************/
+/**
+ *  \fn         void gtCode(void);
+ *  \brief      Dépiler le symbole se trouvant au sommet de la pile d'exécution
+ *              et empiler sa valeur
+ */
+void gtCode(void);
+
+
 #endif /* _CODE_HOC_H_ */

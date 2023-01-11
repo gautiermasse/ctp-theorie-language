@@ -54,8 +54,9 @@ static struct { char *opName; short  opType; void (*opPtrFunc)(); char* opDesc; 
 	"#",    POW,    power,	    "expnentiation",
 	"(",    PO,     0,		    "(",
 	")",    PF,     0,		    ")",
-	"<",    LT,     ltCode,		    "<",
-	//">",    GT,     gt,		    ">",
+	"<",    LT,     ltCode,		"<",
+	">",    GT,     gtCode,		">",
+
 	//"==",   EQ,     eq,		    "egal",
 	//"!=",   NEQ,    neq,		"notegal",
 
