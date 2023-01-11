@@ -195,6 +195,19 @@ void eqCode(void) {
 }
 
 
+/**
+ *	\part	O P E R A T I O N S   C O M P A R A I S O N 
+ */
+/**
+ *  \fn         void neCode(void);
+ *  \brief      Dépiler les deux nombres se trouvant au sommet de la pile
+ *              d'exécution, effectuer une addition et empiler le résultat
+ */
+void neCode(void) {
+	data_t d2 = pop(), d1 = pop();
+	d1.value = d1.value != d2.value;
+	push(d1);
+}
 
 
 /******************************************************************************/

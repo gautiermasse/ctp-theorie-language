@@ -133,4 +133,12 @@ void gtCode(void);
  */
 void eqCode(void);
 
+/******************************************************************************/
+/**
+ *  \fn         void neCode(void);
+ *  \brief      Dépiler le symbole se trouvant au sommet de la pile d'exécution
+ *              et empiler sa valeur
+ */
+void neCode(void);
+
 #endif /* _CODE_HOC_H_ */

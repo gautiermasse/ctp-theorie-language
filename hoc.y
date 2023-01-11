@@ -38,7 +38,7 @@ extern int myError;
 %type		<symb> opAlg var
 
 // Typage des tokens d'opérations arithmétiques
-%token 	<symb> ADD SUB MUL DIV POW LT GT EQ
+%token 	<symb> ADD SUB MUL DIV POW LT GT EQ NE
 %token 	<symb> PO PF
 %token	<symb> PR_TS PR_TS2
 %token RC
@@ -71,7 +71,7 @@ assgn :
   var AFF expr		{ code3((instr_t)varPush, (instr_t)$1, (instr_t)varAssign); }
 	;
 // US : Expression algébrique
-opAlg : ADD | SUB | MUL | DIV | POW | GT | LT | EQ ;
+opAlg : ADD | SUB | MUL | DIV | POW | GT | LT | EQ | NE;
 //opAlg : ADD | SUB | MUL | DIV | POW | AND | OR | NOT | EQ | NE | GT | LT ;
 
 expr : ENTIER { code2((instr_t)intPush, (instr_t)$1); }
